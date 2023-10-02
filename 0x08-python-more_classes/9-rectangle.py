@@ -34,14 +34,7 @@ class Rectangle:
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
-e perimeter of the Rectangle."""
-        if self.__width == 0 or self.__height == 0:
-            return (0)
-        return ((self.__width * 2) + (self.__height * 2))
-
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        """Return the Rectangl            raise ValueError("width must be >= 0")
+            raise ValueError("width must be >= 0")
         self.__width = value
 
     @property
@@ -62,7 +55,14 @@ e perimeter of the Rectangle."""
         return (self.__width * self.__height)
 
     def perimeter(self):
-        """Return the with the greater area.
+        """Return the perimeter of the Rectangle."""
+        if self.__width == 0 or self.__height == 0:
+            return (0)
+        return ((self.__width * 2) + (self.__height * 2))
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Return the Rectangle with the greater area.
 
         Args:
             rect_1 (Rectangle): The first Rectangle.
