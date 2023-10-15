@@ -149,6 +149,7 @@ class Rectangle(Base):
 
 
     def to_dictionary(self):
+        """converts the object to dict representation"""
         context = {
             'id': self.id,
             'width': self.width,

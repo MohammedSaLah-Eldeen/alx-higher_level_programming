@@ -39,7 +39,7 @@ class Base:
     
     @classmethod
     def save_to_file(cls, list_objs):
-
+        """serializes objects to a file"""
         filen = cls.__name__ + ".json"           
 
         with open(filen, "w") as jsonf:
@@ -52,12 +52,14 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """helper function to convert json to py objects"""
         if json_string is None or json_string == '':
             return []
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
+        """class method to create an instance"""
         if cls.__name__ == "Rectangle":
             tmp = cls(2, 3)
         elif cls.__name__ == "Square":
@@ -68,8 +70,8 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """deserializes json to their respective objects"""
         filen = cls.__name__ + ".json"
-
         try:
             with open(filen, "r") as jsonf:
                 content = jsonf.read()
@@ -79,9 +81,3 @@ class Base:
             
         except FileNotFoundError:
             return []
-            
-            
-            
-            
-
-        
