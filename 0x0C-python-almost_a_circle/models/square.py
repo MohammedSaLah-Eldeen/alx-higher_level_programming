@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """introduces the square class"""
 
-from rectangle import Rectangle
+from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """square a special case of a rectangle"""
