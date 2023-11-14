@@ -1,3 +1,3 @@
 -- task 14
-SELECT average(score) AS `average`
+SELECT avg(score) AS `average`
 FROM second_table;
