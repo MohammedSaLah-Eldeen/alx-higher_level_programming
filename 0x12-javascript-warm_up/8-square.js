@@ -4,8 +4,6 @@ if (process.argv[2] === undefined || isNaN(parseInt(process.argv[2]))) console.l
 else {
   const size = parseInt(process.argv[2]);
   for (let v = 1; v <= size; v++) {
-    for (let h = 1; h <= size; h++) {
-      console.log('X')
-    }
+    console.log('X'.repeat(size));
   }
 }
