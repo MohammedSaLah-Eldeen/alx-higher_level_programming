@@ -8,4 +8,3 @@ function factorial (number) {
 
 const fact = factorial(parseInt(process.argv[2]));
 console.log(fact);
-
