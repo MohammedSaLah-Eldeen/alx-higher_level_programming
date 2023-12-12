@@ -10,3 +10,5 @@ class Square extends Square_ {
     }
   }
 }
+
+module.exports = Square;
