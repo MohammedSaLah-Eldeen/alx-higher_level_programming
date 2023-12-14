@@ -1,7 +1,7 @@
+#!/usr/bin/python3
 """
 Task 0.
 """
-#!/usr/bin/python3
 import sys
 import MySQLdb
 
@@ -21,7 +21,9 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute(
         '''
-        SELECT * FROM states
+        SELECT * 
+        FROM states
+        ORDER BY states.id
         '''
     )
     rows = cur.fetchall()
