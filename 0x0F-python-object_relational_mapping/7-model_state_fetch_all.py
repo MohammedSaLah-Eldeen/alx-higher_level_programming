@@ -3,8 +3,8 @@
 Task 7.
 """
 import sys
-from mysqlalchemy import create_engine
-from mysqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
 
