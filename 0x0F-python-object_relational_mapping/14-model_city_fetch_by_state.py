@@ -29,6 +29,7 @@ if __name__ == "__main__":
             State.name.label('state_name')
         )
         .join(City, on=State.id == City.state_id)
+        .order_by(City.id)
         .all()
     )
 
