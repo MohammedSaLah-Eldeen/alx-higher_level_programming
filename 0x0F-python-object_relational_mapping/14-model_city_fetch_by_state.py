@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Task 12.
+Task 14.
 """
 import sys
 from model_state import Base, State
@@ -24,20 +24,19 @@ if __name__ == "__main__":
     result = (
         session
         .query(
-            City.id.label('city_id'),
-            City.name.label('city_name'),
-            State.name.label('state_name')
+            State,
+            City
         )
-        .join(State, on=State.id == City.state_id)
+        .join(City, on=State.id == City.state_id)
         .order_by(City.id)
         .all()
     )
 
-    for record in result:
+    for state, city in result:
         print(
             '{}: ({}) {}'.format(
-                record.state_name,
-                record.city_id,
-                record.city_name
+                state.name,
+                city.id,
+                city.name
             )
         )
