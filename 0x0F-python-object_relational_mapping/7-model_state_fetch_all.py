@@ -3,9 +3,9 @@
 Task 7.
 """
 import sys
+from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
 
 
 if __name__ == "__main__":
@@ -22,4 +22,4 @@ if __name__ == "__main__":
 
     result = session.query(State).order_by(State.id).all()
     for record in result:
-        print(': '.join([record.id, record.name]))
+        print('{}: {}'.format(record.id, record.name))
