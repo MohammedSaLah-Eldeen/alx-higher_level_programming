@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Task 9.
+Task 11.
 """
 import sys
 from model_state import Base, State
@@ -20,7 +20,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_state = session.add(State(name='Louisiana'))
+    new_state = State(name="Louisiana")
+    state.add(new_state)
     session.commit()
 
     print(new_state.id)
