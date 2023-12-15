@@ -24,7 +24,7 @@ if __name__ == "__main__":
     result = (
         session
         .query(
-            City.id,
+            City.id.label('city_id'),
             City.name.label('city_name'),
             State.name.label('state_name')
         )
@@ -33,4 +33,10 @@ if __name__ == "__main__":
     )
 
     for record in result:
-        print('{}: ({}) {}'.format(record.state_name, record.id, record.city_name))
+        print(
+            '{}: ({}) {}'.format(
+                record.state_name,
+                record.city_id,
+                record.city_name
+            )
+        )
