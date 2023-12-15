@@ -26,13 +26,14 @@ if __name__ == "__main__":
         FROM cities
         JOIN states
         ON states.id = cities.state_id
-        WHERE states.name = '{}'
+        WHERE states.name = %s
         ORDER BY cities.id
-        '''.format(state_name)
+        ''',
+        (state_name, )
     )
     rows = cur.fetchall()
-    for row in rows:
-        print(row)
+    tmp = [record[0] for record in rows]
+    print(*tmp, sep=', ')
 
     cur.close()
     db.close()
