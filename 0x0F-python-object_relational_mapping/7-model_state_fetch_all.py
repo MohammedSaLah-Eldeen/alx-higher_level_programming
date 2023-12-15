@@ -14,7 +14,7 @@ if __name__ == "__main__":
     dbname = sys.argv[3]
 
     engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(usrname, passwd, dbname)
+      'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(usrname, passwd, dbname)
     )
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
@@ -23,4 +23,3 @@ if __name__ == "__main__":
     result = session.query(State).order_by(State.id)
     for record in result:
         print(': '.join([record.id, record.name]))
-    
