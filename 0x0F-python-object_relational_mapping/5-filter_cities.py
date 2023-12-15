@@ -31,9 +31,9 @@ if __name__ == "__main__":
         ''',
         (state_name, )
     )
-    rows = cur.fetchall()
-    tmp = [record[0] for record in rows]
-    print(*tmp, sep=', ')
+    records = cur.fetchall()
+    s = ", ".join(record[1] for record in records)
+    print(s)
 
     cur.close()
     db.close()
