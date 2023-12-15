@@ -21,7 +21,7 @@ if __name__ == "__main__":
     session = Session()
 
     new_state = State(name="Louisiana")
-    state.add(new_state)
+    session.add(new_state)
     session.commit()
 
     print(new_state.id)
